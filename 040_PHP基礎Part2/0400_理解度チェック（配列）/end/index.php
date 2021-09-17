@@ -1,9 +1,10 @@
 <?php
+
 /**
  * 商品名 => [価格, 在庫数]
  */
 $products = [
-    'table' => [1000, 2], 
+    'table' => [1000, 2],
     'chair' => [500, 4],
     'bed' => [10000, 1],
     'light' => [5000, 1]
@@ -19,7 +20,7 @@ $products = [
  * lightは5000円で1個存在します。
  */
 echo '<div>商品一覧</div>';
-foreach($products as $key => $val) {
+foreach ($products as $key => $val) {
     $p_name = $key;
     $p_price = $val[0];
     $p_num = $val[1];
@@ -41,12 +42,12 @@ foreach($products as $key => $val) {
 
 // 購入希望 商品数
 $cart = [
-    'table' => 3,
-    'bed' => 1,
+    'table' => 1,
+    'bed' => 2,
 ];
 echo '<div>商品購入</div>';
 
-foreach($cart as $key => $val) {
+foreach ($cart as $key => $val) {
     $c_name = $key;
     $c_num = $val;
 
@@ -54,7 +55,7 @@ foreach($cart as $key => $val) {
 
     $p_num = $products[$c_name][1];
 
-    if($c_num <= $p_num) {
+    if ($c_num <= $p_num) {
         echo 'はい。ありがとうございます。';
     } else {
         echo "すいません。{$c_name}は{$p_num}個しかありません。 ";
