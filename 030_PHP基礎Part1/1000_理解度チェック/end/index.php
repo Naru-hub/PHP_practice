@@ -1,4 +1,5 @@
-<?php 
+<?php
+
 /**
  * 何か商品を買った際に合計金額を表示するための
  * プログラムを作成してみましょう。
@@ -17,11 +18,8 @@
 $price = 0;
 $amount = 1000;
 $sum = $price * $amount;
-if(!empty($sum)) {
+if (!empty($sum)) {
     echo "{$price}円の商品を{$amount}個買ったので合計金額は{$sum}円です。 ";
 } else {
     echo '何か商品を買いましょう。';
 }
-
-
-
