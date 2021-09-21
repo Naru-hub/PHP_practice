@@ -14,7 +14,7 @@ class Person
         $this->age = $age;
     }
 
-    function hello() {
+    final function hello() {
         echo 'hello, ' . $this->name;
         return $this;
     }

@@ -3,17 +3,17 @@ namespace animal;
 
 abstract class Person
 {
-    protected $name;
-    public $age;
-    public static $WHERE = 'Earth';
+    protected string $name;
+    public int $age;
+    public static string $WHERE = 'Earth';
 
-    function __construct($name, $age)
+    function __construct(string $name, int $age)
     {
         $this->name = $name;
         $this->age = $age;
     }
 
-    abstract function hello();
+    abstract function hello(): self;
 
     static function bye() {
         echo 'bye';
@@ -22,7 +22,7 @@ abstract class Person
 
 class Japanese extends Person {
 
-    public static $WHERE = '日本';
+    public static string $WHERE = '日本';
     
     function hello(): self {
         echo 'こんにちは、' . $this->name;
