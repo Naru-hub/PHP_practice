@@ -16,5 +16,25 @@
 
  
 // Sessionを使った場合
+session_start();
+if(isset($_SESSION['VISIT_COUNT'])) {
+  // 2回目以降の訪問時
+  $_SESSION['VISIT_COUNT']++;
+} else {
+  // 1回目以降の訪問時
+  $_SESSION['VISIT_COUNT'] = 1;
+}
+?>
+<h1>訪問回数は<?php echo $_SESSION['VISIT_COUNT']; ?>回目です。</h1>
 
+
+<?php
 // Cookieを使った場合
+$visit_count = 1;
+if(isset($_COOKIE['VISIT_COUNT'])) {
+    // 2回目以降の訪問時
+    $visit_count = $_COOKIE['VISIT_COUNT'] + 1;
+}
+setcookie('VISIT_COUNT', $visit_count);
+?>
+<h1>訪問回数は<?php echo $visit_count; ?>回目です。</h1>
