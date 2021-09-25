@@ -12,5 +12,8 @@
 # - ブラウザの挙動
 # Header のレスポンスヘッダが300番台の場合
 # Locationに指定されたURLへリダイレクト
+Redirect /apache/redirect-test /apache
+Redirect /apache/redirect-test https://google.com
 
 # Redirectループに注意
+Redirect /apache/dir-test /apache/dir-test/sub1

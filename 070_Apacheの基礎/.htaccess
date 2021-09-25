@@ -1,0 +1,5 @@
+# DirectoryIndex file1.html
+# Options -Indexes
+
+RewriteEngine On
+RewriteRule rewrite-test/index.html /apache/rewrite-test/tmp.html
