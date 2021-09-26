@@ -3,9 +3,9 @@
 
 RewriteEngine On
 RewriteBase /apache/rewrite-test/
-# RewriteCond %{QUERY_STRING} p=(.+)&?
-# RewriteRule rewrite-test/sub1 sub1/%1?
 
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule rewrite-test/sub2/(.+) sub1/$1
+# RewriteRule /?rewrite-test/(.+)\.html$ $1.php
+
+RewriteCond /Applications/MAMP/htdocs/fullstack-webdev/070_Apache\xe3\x81\xae\xe5\x9f\xba\xe7\xa4\x8e/rewrite-test/sub2/$1 -f [OR]
+RewriteCond /Applications/MAMP/htdocs/fullstack-webdev/070_Apache\xe3\x81\xae\xe5\x9f\xba\xe7\xa4\x8e/rewrite-test/sub2/$1 -d
+RewriteRule /?rewrite-test/sub1/(.*) sub2/$1
