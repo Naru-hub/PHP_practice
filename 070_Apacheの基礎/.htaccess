@@ -2,9 +2,10 @@
 # Options -Indexes
 
 RewriteEngine On
-# RewriteRule rewrite-test/index.html /apache/rewrite-test/tmp.html
-RewriteBase /apache/rewrite-test
-RewriteCond %{HTTP_HOST} ^localhost
-RewriteRule .? - [F]
-RewriteRule rewrite-test/imgs/(\d{3}).jpg imgs/$1.png
-RewriteRule rewrite-test/sub1/(.+\.html) sub2/$1
+RewriteBase /apache/rewrite-test/
+# RewriteCond %{QUERY_STRING} p=(.+)&?
+# RewriteRule rewrite-test/sub1 sub1/%1?
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule rewrite-test/sub2/(.+) sub1/$1
