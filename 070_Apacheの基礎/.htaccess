@@ -5,7 +5,7 @@ RewriteEngine On
 RewriteBase /apache/rewrite-test/
 
 # RewriteRule /?rewrite-test/(.+)\.html$ $1.php
-
-RewriteCond /Applications/MAMP/htdocs/fullstack-webdev/070_Apache\xe3\x81\xae\xe5\x9f\xba\xe7\xa4\x8e/rewrite-test/sub2/$1 -f [OR]
-RewriteCond /Applications/MAMP/htdocs/fullstack-webdev/070_Apache\xe3\x81\xae\xe5\x9f\xba\xe7\xa4\x8e/rewrite-test/sub2/$1 -d
-RewriteRule /?rewrite-test/sub1/(.*) sub2/$1
+AddType image/webp .webp
+RewriteCond %{HTTP_ACCEPT} image/webp
+RewriteCond /Applications/MAMP/htdocs/fullstack-webdev/070_Apache\xe3\x81\xae\xe5\x9f\xba\xe7\xa4\x8e/rewrite-test/images/$1.webp -f
+RewriteRule /?imgs/(.*)\.(jpe?g|png) imgs/$1.webp
