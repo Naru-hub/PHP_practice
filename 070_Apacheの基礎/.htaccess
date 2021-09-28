@@ -1,11 +1,3 @@
-# DirectoryIndex file1.html
-# Options -Indexes
-
-RewriteEngine On
-RewriteBase /apache/rewrite-test/
-
-# RewriteRule /?rewrite-test/(.+)\.html$ $1.php
-AddType image/webp .webp
-RewriteCond %{HTTP_ACCEPT} image/webp
-RewriteCond /Applications/MAMP/htdocs/fullstack-webdev/070_Apache\xe3\x81\xae\xe5\x9f\xba\xe7\xa4\x8e/rewrite-test/images/$1.webp -f
-RewriteRule /?imgs/(.*)\.(jpe?g|png) imgs/$1.webp
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/plain text/css text/javascript
+</IfModule>
