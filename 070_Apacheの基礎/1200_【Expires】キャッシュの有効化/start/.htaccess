@@ -6,6 +6,13 @@
 # [ExpiresDefault]
 # サーバ設定ファイル, バーチャルホスト, ディレクトリ, .htaccess
 
+<IfModule mod_expires.c>
+  ExpiresActive On
+  <FilesMatch "\.(png|jpe?g|gif|css|js|html)$">
+    ExpiresDefault "access plus 2 week"
+  </FilesMatch>
+</IfModule>
+
 # キャッシュ期間の指定方法
 # 年:year(s)	
 # 月:month(s)
