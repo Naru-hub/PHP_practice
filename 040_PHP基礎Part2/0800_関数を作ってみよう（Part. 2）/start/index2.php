@@ -9,5 +9,6 @@ function with_tax($base_price, $tax_rate = 0.1)    //0.1はデフォルト引数
   return $sum_price;
 }
 
-$price = with_tax($price, 0.08);
+$fn = "with_tax";
+$price = $fn($price, 0.08);
 echo $price;
