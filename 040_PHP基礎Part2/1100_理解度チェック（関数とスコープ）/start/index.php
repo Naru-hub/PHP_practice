@@ -17,10 +17,10 @@
  * taroは欠席しています。
  * ```
  * $is_absentのデフォルト引数はfalseとしてください。
- * 
+ *
  * @param string $student 生徒
  * @param bool $is_absent true:欠席 false:出席
- * @return void 
+ * @return void
  */
 
 function tenko($student, $is_absent = false)
